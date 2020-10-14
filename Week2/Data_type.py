@@ -1,4 +1,4 @@
-#Part 1
+#Assignment 1
 
 myBool = True #Note in JS it needs to be in true
 print(myBool)
