@@ -24,15 +24,15 @@ print myList[2] #this will print watch
 print myList[0][2] #this will Banana
 
 myDict = {
-  "fuel_type": "electric", 
-  "model": "S", 
-  "color": "red"
+  "breed": "retriever", 
+  "name": "max", 
+  "color": "brown"
 }
 print myDict
 print myDict["color"]
 
 
-myString = "1"
+myString = "6"
 myNum = int(myString)
 
 print myNum
