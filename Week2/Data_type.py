@@ -1,39 +1,38 @@
 #Assignment 1
 
-myBool = True #Note in JS it needs to be in true
-print(myBool)
-
-myString = "Anything in qoutes is a string"
-print(myString)
-
-word1 = "Have"
-word2 = "Fun"
-print (word1 + word2 + " " + myString) # this will print Have Fun Anything in quotes is a string
-
-myInt = 78
-print(myInt)
-
-myFloat = 3.14
-print(myFloat) #because it has decimal points. 
-
-print(myInt + myFloat) # this will print 783.14
-
-myList = [["Water", "Apple", "Banana"],["max", "jenny"], "watch"]
-print myList
-print myList[2] #this will print watch
-print myList[0][2] #this will Banana
-
-myDict = {
-  "breed": "retriever", 
-  "name": "max", 
-  "color": "brown"
+#Objest1
+myBottle = {
+    "dimension": "7h x 3dim",
+    "units": "inches",
+    "color": ["red", "black"],
+    "brand": "Kinto",
+    "material": ["stainless steel", "silicone", "polypropylene"],
+    "number": 3
 }
-print myDict
-print myDict["color"]
+
+print (myBottle)
+print (myBottle["material"])
 
 
-myString = "6"
-myNum = int(myString)
+#Objest2
+myLaptop = {
+    "brand": "MacBook Pro",
+    "dimension": "8.62 x 12.35",
+    "units": "inches",
+    "material": "alluminium",
+    "quantity": 2
+}
 
-print myNum
+print (myLaptop)
+print (myLaptop["brand"])
+
+#Object3
+myDesk = {
+    "color": "White",
+    "brand": "Ikea",
+    "foundItOnTheStreet": "True"
+}
+
+print (myDesk)
+print (myDesk["foundItOnTheStreet"])
 
