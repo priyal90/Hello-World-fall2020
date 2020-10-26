@@ -185,9 +185,9 @@ def main():
         print (str(player2["name"]) + " moving... ")
         player2_current_position = huntPlayer2(player2_current_position, result)
 
+        check_win(player2_current_position)
+
 
 
 main()
-
-
 
