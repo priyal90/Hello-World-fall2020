@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>EdgeDetection</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsfeat/0.0.8/jsfeat-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h2><a href="https://kylemcdonald.github.io/cv-examples/">cv-examples</a> Edge Detection <a href="sketch.js">source</a> <a href="https://editor.p5js.org/kylemcdonald/sketches/HJXWJv9nX">edit</a></h2>
+    <p>Find edges using a <a href="https://en.wikipedia.org/wiki/Canny_edge_detector">Canny edge detector</a>.</p>
+    <p>Blur Size: <input type="range" id="blurSize" value="50"></p>
+    <p>Low Threshold: <input type="range" id="lowThreshold" value="15"></p>
+    <p>High Threshold: <input type="range" id="highThreshold" value="25"></p>
+    <script src="sketch.js"></script>
+
+    <h2><a href="https://kylemcdonald.github.io/cv-examples/">cv-examples</a> Motion History <a href="sketch.js">source</a> <a href="https://editor.p5js.org/kylemcdonald/sketches/SJQ_eD5nQ">edit</a></h2>
+    <p>Detect direction of motion. Try stepping out of the video, clicking resetBackground(), and stepping back in. Try different threshold values.</p>
+    <p>Threshold: <input type="range" id="thresholdAmount" value="25"></p>
+    <p><input type="checkbox" id="showRaw"/><label for="showRaw">Show raw image</label></p>
+    <p><button onclick="resetBackground()">Reset Background</button></p>
+    <script src="sketch.js"></script>
+
+</body>
+
+
+
+</html>
