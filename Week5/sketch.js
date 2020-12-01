@@ -1,4 +1,6 @@
 let bugs = [];
+let click = 0;
+
 var spot = {
   x: 100,
   y: 50
@@ -13,7 +15,8 @@ var col = {
 function setup() {
     createCanvas(1440,1024);
     background (0);
-      for (let i = 0; i < 50; i++) {
+    noStroke();
+      for (let i = 0; i < 200; i++) {
       bugs.push(new Jitter());
   }
 }
@@ -21,11 +24,10 @@ function setup() {
 function draw() {
   background (0,5);
   col.r = random(50,255);
-  col.g = 0;
+  col.g = random(20, 255);
   col.b = random(50, 255);
   spot.x = random(0, width);
   spot.y = random(0, height);
-  noStroke();
   fill(col.r,col.g,col.b);
   ellipse(spot.x, spot.y, 25, 25);
   
@@ -52,3 +54,14 @@ class Jitter {
     ellipse(this.x, this.y, this.diameter, this.diameter);
   }
 }
+
+function mouseClicked(){
+  if ( click == 0){
+    noLoop();
+    click =255;
+  } else if ( click == 255){
+    loop();
+    click = 0;
+  }
+}
+
