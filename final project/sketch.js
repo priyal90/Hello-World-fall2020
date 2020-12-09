@@ -50,3 +50,8 @@ this.draw = function() {
       this.y = -2;
     }
   }
+
+  this.move = function() {
+    this.y = this.y + ySpeed;
+  }
+}
