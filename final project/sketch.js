@@ -1,4 +1,6 @@
 let webcam;
+let poseNet;
+let pose;
 
 var w = 640,
     h = 480;
@@ -10,10 +12,14 @@ var countOfEspresso = 0; // Keeps track of how many total espresso shots
 var espresso = [];
 var numEspresso = 10; // Initial number of espresso shots
 
+const video = document.getElementById('webcam');
+
 function setup() {
   createCanvas(w, h);
   webcam = createCapture(VIDEO);
   webcam.size(w, h);
+  poseNet = ml5.poseNet(webcam, modelLoaded);
+  poseNet.on('pose',gotPoses);
   webcam.hide();
   for(i = 0; i < numEspresso; i++) {
       var newEspresso = new Espresso();
@@ -21,11 +27,28 @@ function setup() {
     }
 }
 
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
+
+function gotPoses(poses){
+  console.log(poses);
+  if (poses.length > 0) {
+    pose = poses[0].pose;
+  }
+}
+
 function draw() {
   background(0);
   image(webcam, 0, 0, w, h);
   
   updateAndDisplayEspresso();
+  
+  if (pose) {
+    fill(255,0,0);
+    ellipse(pose.leftWrist.x, pose.leftWrist.y,40);
+    ellipse(pose.rightWrist.x, pose.rightWrist.y,40);
+  }
 }
 
 function updateAndDisplayEspresso() {
