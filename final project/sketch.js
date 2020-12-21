@@ -2,11 +2,12 @@ let webcam;
 let poseNet;
 let pose;
 
+
 var w = 640,
     h = 480;
 
 var ySpeed = 1;
-var countOfEspresso = 0; // Keeps track of how many total espresso shots
+var score = 0; // Keeps track of how many total espresso shots
 
 // Espresso Array
 var espresso = [];
@@ -49,20 +50,37 @@ function draw() {
     ellipse(pose.leftWrist.x, pose.leftWrist.y,40);
     ellipse(pose.rightWrist.x, pose.rightWrist.y,40);
   }
+  
+  text(score,width-100,height-100);
 }
 
 function updateAndDisplayEspresso() {
     for (var i = 0; i < numEspresso; i++) {
       espresso[i].draw();
       espresso[i].move();
+      
+    if (pose){
+    
+    var d = dist(espresso[i].x, espresso[i].y, 
+      pose.leftWrist.x, pose.leftWrist.y);
+      if (d > 0 & d < 20) {
+        score += 1;
+        pop();
     }
+    var dd = dist(espresso[i].x, espresso[i].y, 
+      pose.rightWrist.x, pose.rightWrist.y);
+      if (dd > 0 & dd < 20) {
+        score += 1;
+        pop();
+    }
+  }
+ }
 }
 
 function Espresso() {
   this.x = random(0, width);
   this.y = random(0, height);
-
-
+    
 this.draw = function() {
     fill(139, 69, 19);
     if (this.y <= height + 2 ) {
